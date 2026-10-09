@@ -1,0 +1,39 @@
+{
+  "name": "project-mirror",
+  "version": "0.1.0",
+  "description": "Project MIRROR city digital twin desktop prototype",
+  "main": "main.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "org.projectmirror.citytwin",
+    "productName": "Project MIRROR",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Project-MIRROR-${version}-Windows-${arch}.${ext}"
+    }
+  }
+}
